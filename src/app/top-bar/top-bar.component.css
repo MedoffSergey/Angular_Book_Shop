@@ -1,0 +1,7 @@
+.logotype {
+  display: flex;
+}
+
+.logoText {
+  margin-left: 1rem;
+}

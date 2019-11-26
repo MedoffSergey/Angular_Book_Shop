@@ -1,0 +1,19 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="'Название книги: ' + product.name">
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.author">Автор : {{ product.author }}</p>
+
+  <p *ngIf="product.price">Цена: {{ product.price }}</p>
+
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+
+  <button [routerLink]="['../book-card']">
+    Купить
+  </button>
+</div>
