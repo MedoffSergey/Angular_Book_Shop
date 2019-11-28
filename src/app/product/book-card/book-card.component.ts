@@ -11,7 +11,7 @@ import {ActivatedRoute} from '@angular/router';
 
 export class BookCardComponent {
   public cardBook;
-  id: {cardId: number};
+  id: { number};
 
   constructor(public configService: ConfigService,
     private activateRoute: ActivatedRoute
@@ -19,10 +19,9 @@ export class BookCardComponent {
 
 
   ngOnInit(): void {
-    console.log(this.id.cardId)
+
     this.configService.getBooksId(this.id.cardId).subscribe(data => {
       this.cardBook = data;
-      console.log(this.cardBook)
     }, error => {
       if(error){
         debugger;
