@@ -8,21 +8,21 @@ import { ConfigService } from "../../services/config.service";
 })
 export class ProductListComponent implements OnInit {
   public products: any[] = [];
+  public displayedColumns: string[] = ['id', 'name', 'age', 'author' ,'showBtn'];
 
   constructor(public configService: ConfigService) {}
+
   ngOnInit(): void {
     this.configService.getBooks().subscribe(data => {
-
-      // тут получаем данные с get запроса.
-      debugger;
+      console.log(data)
       this.products = data;
+
     }, error => {
-      debugger;
-      //тут обрабатываем ошибку
+      if(error){
+        debugger;
+        console.log(error)
+      }
     });
   }
 
-  share() {
-    window.alert("The product has been shared!");
-  }
 }

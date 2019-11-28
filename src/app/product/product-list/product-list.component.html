@@ -1,19 +1,35 @@
-<h2>Products</h2>
+<mat-table [dataSource]="products"  class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> Номер </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+  </ng-container>
 
-<div *ngFor="let product of products">
-  <h3>
-    <a [title]="'Название книги: ' + product.name">
-      {{ product.name }}
-    </a>
-  </h3>
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Название книги </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.bookName}} </mat-cell>
+  </ng-container>
 
-  <p *ngIf="product.author">Автор : {{ product.author }}</p>
+  <!-- Weight Column -->
+  <ng-container matColumnDef="age">
+    <mat-header-cell *matHeaderCellDef> Год </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
+  </ng-container>
 
-  <p *ngIf="product.price">Цена: {{ product.price }}</p>
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="author">
+    <mat-header-cell *matHeaderCellDef> Автор </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.author}} </mat-cell>
+  </ng-container>
 
-  <p *ngIf="product.description">Description: {{ product.description }}</p>
+  <ng-container matColumnDef="showBtn">
+    <mat-header-cell *matHeaderCellDef> Информация </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-raised-button color="primary" [routerLink]="['..', 'book-card', element.id]">Ознакомиться</button>
+    </mat-cell>
+  </ng-container>
 
-  <button [routerLink]="['../book-card']">
-    Купить
-  </button>
-</div>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

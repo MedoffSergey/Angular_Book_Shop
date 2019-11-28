@@ -1,11 +1,17 @@
-<app-top-bar></app-top-bar>
+<mat-toolbar color="primary" class='navbar'>
+  <a [routerLink]="['/']">
+    <div class = "logotype">
+      <img src = "../assets/open-book.svg" alt="open-book" width='40px' height="40px">
+      <h1 class = 'logoText'>Library</h1>
+  </div>
+  </a>
+  <div>
+    <a [routerLink]="['/']" >Главная</a>
+    <a>О нас</a>
+    <a>Сервисы</a>
+  </div>
+</mat-toolbar>
 
 <div class="container">
   <router-outlet></router-outlet>
 </div>
-
-<!--
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->

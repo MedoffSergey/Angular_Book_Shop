@@ -1,0 +1,38 @@
+.mat-card-image{
+  padding-left: 60px;
+  width: calc(25% + 100px);
+}
+
+.life_information {
+  margin-left: 60px;
+  margin-bottom: 20px;
+}
+
+.biography {
+  position: absolute;
+  top: 8%;
+  right: calc(25% + (-100px));
+  width: 50%;
+}
+
+.biography_title{
+  position: absolute;
+  top: 5%;
+  right: calc(25% + (-100px));
+  width: 50%;
+}
+
+.bookName {
+  display: flex;
+  justify-content: center;
+}
+
+.bookContent{
+  width: 75%;
+  margin: 0 auto;
+}
+
+.returnHome{
+  position: relative;
+  left: 50%;
+}
