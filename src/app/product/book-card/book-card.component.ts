@@ -11,7 +11,7 @@ import {ActivatedRoute} from '@angular/router';
 
 export class BookCardComponent {
   public cardBook;
-  id: { number};
+  id: {[key: string]: number};
 
   constructor(public configService: ConfigService,
     private activateRoute: ActivatedRoute
